@@ -1,0 +1,15 @@
+current directory: /home/polina/library_card/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+/usr/bin/ruby2.5 -r ./siteconf20210707-4350-1trbkls.rb extconf.rb
+creating Makefile
+
+current directory: /home/polina/library_card/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /home/polina/library_card/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/polina/library_card/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20210707-4350-ga756c/bootsnap
