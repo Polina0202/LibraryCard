@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_081830) do
+ActiveRecord::Schema.define(version: 2021_07_16_055715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,19 +29,28 @@ ActiveRecord::Schema.define(version: 2021_07_14_081830) do
     t.string "title"
     t.integer "year_published"
     t.text "annotation"
-    t.integer "number_of_pages"
+    t.integer "pages"
     t.text "content"
-    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "cards", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date "return_period"
+  create_table "card_books", force: :cascade do |t|
+    t.bigint "card_id"
+    t.bigint "book_id"
+    t.datetime "planning_return_time", null: false
+    t.datetime "returned_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_card_books_on_book_id"
+    t.index ["card_id"], name: "index_card_books_on_card_id"
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name", default: "Новая карточка"
+    t.boolean "active", default: true
   end
 
   create_table "genres", force: :cascade do |t|
@@ -52,15 +61,9 @@ ActiveRecord::Schema.define(version: 2021_07_14_081830) do
   end
 
   create_table "libraries", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "repositories", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.text "schedule"
-    t.bigint "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
