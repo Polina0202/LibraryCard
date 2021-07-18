@@ -4,7 +4,7 @@ class CreateLibraries < ActiveRecord::Migration[6.1]
       t.string :name #наименование библиотеки/книгохранилища
       t.string :address
       t.text :schedule
-#      t.bigint :telephone
+      t.bigint :telephone
       t.timestamps
     end
   end

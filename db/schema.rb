@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_16_055715) do
+ActiveRecord::Schema.define(version: 2021_07_18_074911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 2021_07_16_055715) do
     t.string "title"
     t.integer "year_published"
     t.text "annotation"
-    t.integer "pages"
+    t.integer "number_of_pages"
     t.text "content"
+    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,8 +50,10 @@ ActiveRecord::Schema.define(version: 2021_07_16_055715) do
   create_table "cards", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name", default: "Новая карточка"
-    t.boolean "active", default: true
+    t.bigint "person_id", null: false
+    t.bigint "library_id", null: false
+    t.index ["library_id"], name: "index_cards_on_library_id"
+    t.index ["person_id"], name: "index_cards_on_person_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -64,8 +67,19 @@ ActiveRecord::Schema.define(version: 2021_07_16_055715) do
     t.string "name"
     t.string "address"
     t.text "schedule"
+    t.bigint "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "people", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birthday"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "cards", "libraries"
+  add_foreign_key "cards", "people"
 end
