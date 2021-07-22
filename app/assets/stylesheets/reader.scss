@@ -1,0 +1,162 @@
+:root
+{
+  --main-button-color: #3a5ae8; //самый синий
+  --main-backgrond-color: #e6e6fa; //еле синий
+  --minor--button-color: #142fa8; //нажатие на синию кнопку
+  --minor--mainButton-color: #f5f5f5; //нажатие на главную страницу
+}
+
+.page
+{
+  #profile_user
+  {
+    height: 70px;
+    p
+    {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+
+      margin-left: 87%;
+      margin-top: 10%;
+      display: inline;
+    }
+    img
+    {
+      width: 40px;
+    }
+  }
+  #menu_user
+  {
+    background: var(--main-backgrond-color);
+    width: 26%;
+    height: 190px;
+    border-radius: 10px;
+
+    input
+    {
+      margin-left: 20px;
+      width: 57.5%;
+      height: 32px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 2px solid white;
+
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border: 2px solid var(--main-button-color);
+    }
+
+    button
+    {
+      color: white;
+      background: var(--main-button-color);
+      border-radius: 5px;
+      border: 2px solid var(--main-button-color);
+      font-family: sans-serif;
+      font-size: 15px;
+      width: 27%;
+      height: 40px;
+      margin-bottom: 20px;
+      font-weight: 600;
+
+      cursor: pointer;
+    }
+
+    button:focus {
+      background: var(--minor--button-color);
+    }
+
+    p
+    {
+      margin-left: 20px;
+      font-family: sans-serif;
+      font-size: 15px;
+    }
+
+    select
+    {
+      border-radius: 5px;
+      border: 2px solid var(--main-button-color);
+      color: white;
+      background: var(--main-button-color);
+      font-family: sans-serif;
+      font-size: 15px;
+      padding: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: 5px;
+      font-weight: 600;
+    }
+
+    option:hover
+    {
+      background: red;
+    }
+
+    a
+    {
+      position:fixed;
+      color: var(--main-button-color);
+      border-radius: 5px;
+      border: 2px solid;
+      background: white;
+      cursor: pointer;
+      font-family: sans-serif;
+      font-size: 19px;
+
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 7px;
+      padding-right: 7px;
+      text-align: center;
+      text-decoration: none;
+
+      position: relative;
+      top: 30px;
+      left: 20px;
+    }
+    a:focus {
+      background: var(--minor--mainButton-color);
+    }
+    
+    p
+    {
+      display: inline;
+    }
+  }
+
+  #table_user
+  {
+    table-layout: fixed;
+    font-family: sans-serif;
+    font-size: 17px;
+    text-align: center;
+
+    background: var(--main-button-color);
+    border: 2px solid var(--main-button-color);
+    border-radius: 5px;
+
+    width: 72%;
+    position: relative;
+    left: 365px;
+    bottom: 190px;
+
+
+    column-gap: 9px;
+    td
+    {
+      padding-right: 10px;
+      padding-left: 10px;
+      padding: 8px;
+      background: white;
+      border: 2px solid var(--main-button-color);
+      border-radius: 5px;
+      word-wrap: break-word;
+    }
+  }
+}
