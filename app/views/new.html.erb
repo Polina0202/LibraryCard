@@ -1,0 +1,15 @@
+<button onclick="(document.getElementById('form').style.display='none')"><%= image_tag("close.png") do %><% end %></button>
+<%= form_with model: @book do |form|%>
+<%= form.label :title, "Название книги:" %><br>
+<%= form.text_field :title %><br>
+<%= form.label :year_published, "год публикации:" %><br>
+<%= form.text_field :year_published %><br>
+<%= form.label :annotation, "Аннатация:" %><br>
+<%= form.text_area :annotation %><br>
+<%= form.label :number_of_pages, "Количество страниц:" %><br>
+<%= form.text_field :number_of_pages %><br>
+<%= form.label :content, "Оглавление:" %><br>
+<%= form.text_area :content %><br>
+<%= button_to "Добавить запись", @book, remote:true%>
+
+<% end %>

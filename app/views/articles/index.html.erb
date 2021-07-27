@@ -9,6 +9,13 @@
   Более 5 000 библиотек по всей России
 </div>
 
+<!--<div class="search_library">
+<%= form_with method: :get do |form| %>
+  <%= form.text_field :query %>
+  <%= form.button "Поиск"%>
+<% end %>-->
+
+/div>
 <div class="search_library">
   <form action="" method="get">
     <input name="s" placeholder="Найти книгу..." type="search">
@@ -16,6 +23,55 @@
   </form>
 </div>
 
+
 <div class="result">
 Результат поиска будет отображен ниже
 </div>
+
+<div class="add">
+<button onclick="(document.getElementById('form').style.display='block')">Добавить</button>
+</div>
+
+<div id="form">
+  <button onclick="(document.getElementById('form').style.display='none')"><%= image_tag("close.png") do %><% end %></button>
+  <%= form_for @book do |form|%>
+  <%= form.label :title, "Название книги:" %><br>
+  <%= form.text_field :title %><br>
+  <%= form.label :year_published, "Год публикации:" %><br>
+  <%= form.text_field :year_published %><br>
+  <%= form.label :annotation, "Аннатация:" %><br>
+  <%= form.text_area :annotation %><br>
+  <%= form.label :number_of_pages, "Количество страниц:" %><br>
+  <%= form.text_field :number_of_pages %><br>
+  <%= form.label :content, "Оглавление:" %><br>
+  <%= form.text_area :content %><br>
+  <%= button_to "Добавить запись", @book%>
+
+  <% end %>
+</div>
+
+<div class="table">
+  <table border="0">
+  <thead>
+   <tr>
+   <td>Название книги</td>
+   <td>Год публикации</td>
+   <td>Аннатация</td>
+   <td>Количество страниц</td>
+   <td>Оглавление</td>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @books.each do |book| %>
+      <tr>
+       <td><%= book.title %></td>
+       <td><%= book.year_published %></td>
+       <td><%= book.annotation %></td>
+       <td><%= book.number_of_pages %></td>
+       <td><%= book.content %></td>
+      <tr>
+    <% end %>
+  </tr>
+  </tbody>
+  </table>
