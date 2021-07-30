@@ -1,0 +1,11 @@
+<%= f.label :first_name, "Имя:" %><br>
+<%= f.text_field :first_name %><br>
+<%= f.label :last_name, "Фамилия:" %><br>
+<%= f.text_field :last_name %><br>
+<%= f.label :gender, "Пол:" %><br>
+<%= f.radio_button :gender, "0" %>Женский<br>
+<%= f.radio_button :gender, "1" %>Мужской<br><br>
+<%= f.label :active, "Статус:" %><br>
+<%= f.check_box :active %>активен на сегоднешний день<br><br>
+<%= f.label :description, "Информация:" %><br>
+<%= f.text_area :description %><br>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     get '/staff', to: "staff#staff"
 
     resources :books
+    resources :authors
 end

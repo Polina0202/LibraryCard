@@ -1,0 +1,37 @@
+<div class="button-right">
+  <%= link_to 'Добавить автора', new_author_path %>
+</div>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <td>Имя</td>
+        <td>Фамилия</td>
+        <td>Пол</td>
+        <td>Статус</td>
+        <td>Информация</td>
+        <td>Действия</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @authors.each do |author| %>
+        <tr>
+          <td><%= link_to author.first_name, edit_author_path(author.id) %></td>
+          <td><%= author.last_name %></td>
+          <td><%= if author.gender == 0
+             "Женкий"
+           else "Мужской" end%></td>
+          <td><%= if author.active == true
+             "Активен"
+           else "Неактивен" end%></td>
+          <td><%= author.description %></td>
+          <td><%= link_to 'Удалить', author_path(author.id), method: :delete, data: {confirm: 'Ты уверен?'} %></td>
+          <tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="button_back">
+  <a href="articles.html">На главную</a>
+</div>

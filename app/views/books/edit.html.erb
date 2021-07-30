@@ -1,0 +1,7 @@
+<div id="form">
+  <%= form_for @book, as: :book, url: book_path(@book), method: :patch do |form|%>
+    <%= render 'form', f: form %>
+    <%= link_to "Вернуться к списку", request.referrer %>
+    <%= form.submit "Изменить" %>
+  <% end %>
+</div>
