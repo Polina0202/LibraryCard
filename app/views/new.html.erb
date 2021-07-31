@@ -6,8 +6,8 @@
 <%= form.text_field :year_published %><br>
 <%= form.label :annotation, "Аннатация:" %><br>
 <%= form.text_area :annotation %><br>
-<%= form.label :number_of_pages, "Количество страниц:" %><br>
-<%= form.text_field :number_of_pages %><br>
+<%= form.label :pages, "Количество страниц:" %><br>
+<%= form.text_field :pages %><br>
 <%= form.label :content, "Оглавление:" %><br>
 <%= form.text_area :content %><br>
 <%= button_to "Добавить запись", @book, remote:true%>

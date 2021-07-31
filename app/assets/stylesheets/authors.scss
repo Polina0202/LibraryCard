@@ -1,3 +1,17 @@
 // Place all the styles related to the authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.gender-block {
+  margin: 10px 0;
+  .gender-radio_button {
+    margin: 5px 0;
+    padding: 0;
+  }
+}
+
+// label {
+//   font-weight: bold !important;
+//   color: orange;
+//   margin-top: 20px !important;
+// }

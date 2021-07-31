@@ -1,0 +1,5 @@
+ru:
+  enum:
+    gender:
+      male: 'Мужской'
+      female: 'Женский'
