@@ -1,0 +1,7 @@
+<div id="form">
+  <%= form_for @reader, as: :reader, url: person_path(@reader), method: :patch do |form|%>
+    <%= render 'form', f: form %>
+    <%= link_to "Вернуться к списку", readers_path %>
+    <%= form.submit "Изменить" %>
+  <% end %>
+</div>

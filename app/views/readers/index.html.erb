@@ -1,0 +1,33 @@
+<div class="button-right">
+  <%= link_to 'Добавить читателя', new_reader_path %>
+</div>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <td>Фамилия</td>
+        <td>Имя</td>
+        <td>Дата рождения</td>
+        <!-- <td>Название книги</td>
+        <td>Автор</td>
+        <td>Адрес библиотеки</td>
+        <td>Время возврата</td> -->
+        <td>Действия</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @readers.each do |reader| %>
+        <tr>
+          <td><%= link_to reader.last_name, edit_reader_path(reader.id) %></td>
+          <td><%= reader.first_name %></td>
+          <td><%= reader.birthday %></td>
+          <td><%= link_to 'Удалить', reader_path(reader.id), method: :delete, data: {confirm: 'Ты уверен?'} %></td>
+          <tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="button_back">
+  <a href="articles.html">На главную</a>
+</div>

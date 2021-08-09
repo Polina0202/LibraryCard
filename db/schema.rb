@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_31_050812) do
+ActiveRecord::Schema.define(version: 2021_08_05_163622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 2021_07_31_050812) do
     t.string "title"
     t.integer "year_published"
     t.text "annotation"
-    t.integer "pages"
+    t.integer "number_of_pages"
     t.text "content"
+    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
@@ -49,14 +50,12 @@ ActiveRecord::Schema.define(version: 2021_07_31_050812) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "name", default: "Новая карточка"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "active", default: true
-    t.bigint "person_id", null: false
+    t.bigint "reader_id", null: false
     t.bigint "library_id", null: false
     t.index ["library_id"], name: "index_cards_on_library_id"
-    t.index ["person_id"], name: "index_cards_on_person_id"
+    t.index ["reader_id"], name: "index_cards_on_reader_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_07_31_050812) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "people", force: :cascade do |t|
+  create_table "readers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.date "birthday"
@@ -84,5 +83,5 @@ ActiveRecord::Schema.define(version: 2021_07_31_050812) do
   end
 
   add_foreign_key "cards", "libraries"
-  add_foreign_key "cards", "people"
+  add_foreign_key "cards", "readers"
 end

@@ -21,7 +21,7 @@
           <td><%= book.author.full_name %></td>
           <td><%= book.year_published %></td>
           <td><%= book.annotation %></td>
-          <td><%= book.pages %></td>
+          <td><%= book.number_of_pages %></td>
           <td><%= book.content %></td>
           <td><%= link_to 'Удалить', book_path(book.id), method: :delete, data: {confirm: 'Ты уверен?'} %></td>
           <tr>

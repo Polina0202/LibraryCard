@@ -6,8 +6,11 @@
   <div class="gender-block">
     <%= f.label :gender, "Пол:"%><br>
     <div style="margin-top: 10px;">
-      <p class="gender-radio_button"><%= f.radio_button :gender, "0" %><%= t("enum.gender.female") %></p>
-      <p class="gender-radio_button"><%= f.radio_button :gender, "1" %><%= t("enum.gender.male") %></p>
+      <p class="gender-radio_button"><%= f.radio_button :gender, "female" %><%= t("enum.gender.female") %></p>
+      <p class="gender-radio_button"><%= f.radio_button :gender, "male" %><%= t("enum.gender.male") %></p>
+
+      <!--<p class="gender-radio_button"><%= f.radio_button :gender, "0" %><%= t("enum.gender.female") %></p>
+      <p class="gender-radio_button"><%= f.radio_button :gender, "1" %><%= t("enum.gender.male") %></p>-->
     </div>
   </div>
   <%= f.label :active, "Статус:" %><br>
