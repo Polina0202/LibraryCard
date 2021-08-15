@@ -8,11 +8,8 @@
         <td>Фамилия</td>
         <td>Имя</td>
         <td>Дата рождения</td>
-        <!-- <td>Название книги</td>
-        <td>Автор</td>
-        <td>Адрес библиотеки</td>
-        <td>Время возврата</td> -->
-        <td>Действия</td>
+        <td>Список книг</td>
+        <td colspan="2">Действия</td>
       </tr>
     </thead>
     <tbody>
@@ -21,7 +18,11 @@
           <td><%= link_to reader.last_name, edit_reader_path(reader.id) %></td>
           <td><%= reader.first_name %></td>
           <td><%= reader.birthday %></td>
-          <td><%= link_to 'Удалить', reader_path(reader.id), method: :delete, data: {confirm: 'Ты уверен?'} %></td>
+          <td><%= if (!reader.card.card_books.empty?)
+            reader.all_book
+          end%></td>
+          <td><%= link_to 'Добавить книгу', new_card_book_url, class: "add_book_button" %></td>
+          <td><%= link_to 'Удалить', reader_path(reader.id),  class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
           <tr>
       <% end %>
     </tbody>

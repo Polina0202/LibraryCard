@@ -1,0 +1,14 @@
+<div id="form">
+  <div class="books">
+    <%= form_with model: @cardbook do |f| %>
+    <div class="book-select">
+      <%= f.label :content, "Выберите книгу:" %>
+      <%= f.collection_select :book_id, Book.order(:title), :id, :full_title %><br>
+    </div>
+    <%= f.label :content, "Планируемое время сдачи:" %>
+    <%= f.date_field :planning_return_time %><br>
+    <%= link_to "Вернуться к списку", request.referrer %>
+    <%= button_to "Добавить запись", @book %>
+    <% end %>
+  </div>
+</div>
