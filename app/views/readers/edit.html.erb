@@ -1,7 +1,23 @@
-<div id="form">
+<div id="edit-reader">
   <%= form_for @reader, as: :reader, url: reader_path(@reader), method: :patch do |form|%>
-    <%= render 'form', f: form %>
-    <%= link_to "Вернуться к списку", readers_path %>
-    <%= form.submit "Изменить" %>
+    <h2><%= @reader.full_name %></h2>
+    <div class="nested-fields">
+      <table>
+        <thead>
+          <th>Название книги</th>
+          <th>Действия</th>
+        </thead>
+        <tbody>
+          <%= form.fields_for :reader_books do |f| %>
+            <%= render 'reader_book_fields', f: f %>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="links">
+        <%= link_to_add_association 'Добавить книгу', form, :reader_books %>
+      </div>
+    </div>
+    <p><%= link_to "Вернуться к списку", readers_path %></p>
+    <p><%= form.submit "Изменить" %></p>
   <% end %>
 </div>

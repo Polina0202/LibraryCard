@@ -38,12 +38,14 @@ class ReadersController < ApplicationController
 
   def destroy
     @reader = Reader.find(params[:id])
+    @reader.card.destroy
     @reader.destroy
     redirect_to readers_path
   end
 
   private
   def reader_params
-    params.require(:reader).permit(:id, :first_name, :last_name, :birthday)
+    params.require(:reader).permit(:id, :first_name, :last_name, :birthday,
+    reader_books_attributes: [:id, :reader_id, :book_id, :_destroy])
   end
 end

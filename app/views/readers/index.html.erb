@@ -8,7 +8,6 @@
         <td>Фамилия</td>
         <td>Имя</td>
         <td>Дата рождения</td>
-        <td>Список книг</td>
         <td colspan="2">Действия</td>
       </tr>
     </thead>
@@ -18,10 +17,6 @@
           <td><%= link_to reader.last_name, edit_reader_path(reader.id) %></td>
           <td><%= reader.first_name %></td>
           <td><%= reader.birthday %></td>
-          <td><%= if (!reader.card.card_books.empty?)
-            reader.all_book
-          end%></td>
-          <td class="transparent"><%= link_to 'Добавить книгу', new_card_book_url, class: "add_book_button" %></td>
           <td class="transparent"><%= link_to 'Удалить', reader_path(reader.id),  class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
         </tr>
       <% end %>

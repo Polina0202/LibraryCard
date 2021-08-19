@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    <%= f.collection_select :book_id, Book.order(:title), :id, :title %>
+  </td>
+  <td>
+    <%= link_to_remove_association "Удалить книгу", f %>
+  </td>
+</tr>

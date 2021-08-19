@@ -29,29 +29,19 @@ ActiveRecord::Schema.define(version: 2021_08_05_163622) do
     t.string "title"
     t.integer "year_published"
     t.text "annotation"
-    t.integer "number_of_pages"
+    t.integer "pages"
     t.text "content"
-    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
-  create_table "card_books", force: :cascade do |t|
-    t.bigint "card_id"
-    t.bigint "book_id"
-    t.datetime "planning_return_time", null: false
-    t.datetime "returned_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id"], name: "index_card_books_on_book_id"
-    t.index ["card_id"], name: "index_card_books_on_card_id"
-  end
-
   create_table "cards", force: :cascade do |t|
+    t.string "name", default: "Новая карточка"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active", default: true
     t.bigint "reader_id", null: false
     t.bigint "library_id", null: false
     t.index ["library_id"], name: "index_cards_on_library_id"
@@ -72,6 +62,17 @@ ActiveRecord::Schema.define(version: 2021_08_05_163622) do
     t.bigint "telephone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reader_books", force: :cascade do |t|
+    t.bigint "book_id"
+    t.datetime "planning_return_time", null: false
+    t.datetime "returned_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "reader_id"
+    t.index ["book_id"], name: "index_reader_books_on_book_id"
+    t.index ["reader_id"], name: "index_reader_books_on_reader_id"
   end
 
   create_table "readers", force: :cascade do |t|
