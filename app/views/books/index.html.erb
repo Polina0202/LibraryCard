@@ -23,7 +23,7 @@
           <td><%= book.annotation %></td>
           <td><%= book.number_of_pages %></td>
           <td><%= book.content %></td>
-          <td><%= link_to 'Удалить', book_path(book.id), class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
+          <td class="transparent"><%= link_to 'Удалить', book_path(book.id), class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
           <tr>
       <% end %>
     </tbody>

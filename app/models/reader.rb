@@ -10,7 +10,11 @@ class Reader < ApplicationRecord
   end
 
   def all_book
-    Book.find(CardBook.find_by(card_id: self.card).book_id).title
+
+    CardBook.all.each do |cardBookAll|
+      cardBookAll
+    end
+    #{}"\"#{Book.find(CardBook.find_by(card_id: self.card).book_id).title}\""
   end
 
 end

@@ -23,7 +23,7 @@
           <td><%= active_str(author.active) %></td>
           <td><%= author.description %></td>
           <td><%= list_books(author).html_safe %></td>
-          <td><%= link_to 'Удалить', author_path(author.id),  class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
+          <td class="transparent"><%= link_to 'Удалить', author_path(author.id),  class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
           <tr>
       <% end %>
     </tbody>
