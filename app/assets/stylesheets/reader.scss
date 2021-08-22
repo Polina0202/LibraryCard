@@ -1,28 +1,22 @@
-// Place all the styles related to the People controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-.delete_button
-{
-  background-color: #ff2b2b;
-  padding: 7px;
-  border-radius: 5px;
-}
-
-.add_book_button
-{
-  background-color: #32cd32;
-  padding: 7px;
-  border-radius: 5px;
-}
-
 #edit-reader {
   padding: 10px 15px;
+  background: #bdbdf2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
   table {
-    td {
+    width: 100%;
+    border-radius: 10px;
+    background: white;
+    /*border-collapse: collapse;*/
+    border: 2px solid red;
+    th {
+      border: 2px solid red;
       padding: 10px 15px;
+
     }
   }
   p {
-    padding-left: 15px;
+    //padding-left: 15px;
   }
 }

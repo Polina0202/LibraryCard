@@ -1,8 +1,12 @@
 <div class="readers">
-  <%= f.label :first_name, "Имя:" %><br>
-  <%= f.text_field :first_name%><br>
-  <%= f.label :last_name, "Фамилия:" %><br>
-  <%= f.text_field :last_name %><br>
-  <%= f.label :birthday, "Дата рождения:" %>
-  <%= f.date_field :birthday %><br>
+  <div class="form_name">
+    <%= f.label :first_name, "Имя:" %>
+    <%= f.text_field :first_name%>
+    <%= f.label :last_name, "Фамилия:" %>
+    <%= f.text_field :last_name %>
+</div>
+  <div class="form_birthday">
+    <%= f.label :birthday, "Дата рождения:" %>
+    <%= f.date_field :birthday %>
+  </div>
 </div>

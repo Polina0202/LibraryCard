@@ -1,8 +1,6 @@
-<div class="button-right">
-  <%= link_to 'Добавить автора', new_author_path %>
-</div>
-<div class="table">
-  <table>
+<div class="page">
+  <%= link_to 'Добавить автора', new_author_path, class:"button-right"%>
+  <table class="model-table">
     <thead>
       <tr>
         <td>Имя</td>
@@ -17,7 +15,7 @@
     <tbody>
       <% @authors.each do |author| %>
         <tr>
-          <td><%= link_to author.first_name, edit_author_path(author.id) %></td>
+          <td><%= link_to author.first_name, edit_author_path(author.id), class: "bold" %></td>
           <td><%= author.last_name %></td>
           <td><%= t("enum.gender.#{author.gender}") %></td>
           <td><%= active_str(author.active) %></td>
@@ -28,8 +26,7 @@
       <% end %>
     </tbody>
   </table>
-</div>
 
-<div class="button_back">
-  <a href="articles.html">На главную</a>
+  <a class="button_back" href="articles.html">На главную</a>
+
 </div>

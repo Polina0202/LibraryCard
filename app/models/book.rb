@@ -8,8 +8,4 @@ class Book < ApplicationRecord
   def full_title
     "\"#{self.title}\" #{Author.find(self.author_id).full_name}"
   end
-
-  def number_of_pages
-    self.pages
-  end
 end

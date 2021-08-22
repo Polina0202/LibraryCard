@@ -1,8 +1,7 @@
-<div class="button-right">
-  <%= link_to 'Добавить книгу', new_book_path %>
-</div>
-<div class="table">
-  <table>
+<div class="page">
+  <%= link_to 'Добавить книгу', new_book_path, class:"button-right"%>
+
+  <table class="model-table">
     <thead>
       <tr>
         <td>Название книги</td>
@@ -21,15 +20,13 @@
           <td><%= book.author.full_name %></td>
           <td><%= book.year_published %></td>
           <td><%= book.annotation %></td>
-          <td><%= book.number_of_pages %></td>
+          <td><%= book.page %></td>
           <td><%= book.content %></td>
           <td class="transparent"><%= link_to 'Удалить', book_path(book.id), class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
           <tr>
       <% end %>
     </tbody>
   </table>
-</div>
 
-<div class="button_back">
-  <a href="articles.html">На главную</a>
+  <a class="button_back", href="articles.html">На главную</a>
 </div>

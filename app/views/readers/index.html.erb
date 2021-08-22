@@ -1,8 +1,7 @@
-<div class="button-right">
-  <%= link_to 'Добавить читателя', new_reader_path %>
-</div>
-<div class="table">
-  <table>
+<div class="page">
+  <%= link_to 'Добавить читателя', new_reader_path, class:"button-right" %>
+
+  <table class="model-table">
     <thead>
       <tr>
         <td>Фамилия</td>
@@ -14,7 +13,7 @@
     <tbody>
       <% @readers.each do |reader| %>
         <tr>
-          <td><%= link_to reader.last_name, edit_reader_path(reader.id) %></td>
+          <td><%= link_to reader.last_name, edit_reader_path(reader.id), class: "bold" %></td>
           <td><%= reader.first_name %></td>
           <td><%= reader.birthday %></td>
           <td class="transparent"><%= link_to 'Удалить', reader_path(reader.id),  class: "delete_button", method: :delete, data: {confirm: 'Ты уверен?'} %></td>
@@ -22,8 +21,6 @@
       <% end %>
     </tbody>
   </table>
-</div>
 
-<div class="button_back">
-  <a href="articles.html">На главную</a>
+  <a class="button_back" href="articles.html">На главную</a>
 </div>

@@ -1,7 +1,11 @@
-<div id="form">
-  <%= form_for @author, as: :author, url: author_path(@author), method: :patch do |form|%>
-    <%= render 'form', f: form %>
-    <%= link_to "Вернуться к списку", authors_path %>
-    <%= form.submit "Изменить" %>
-  <% end %>
+<div class="container">
+  <div id="form">
+    <%= form_for @author, as: :author, url: author_path(@author), method: :patch do |form|%>
+      <%= render 'form', f: form %>
+      <div class="form-button">
+        <%= link_to "Вернуться к списку", authors_path %>
+        <%= form.submit "Изменить" %>
+      </div>
+      <% end %>
+    </div>
 </div>

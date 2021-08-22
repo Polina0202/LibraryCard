@@ -1,7 +1,11 @@
-<div id="form">
-  <%= form_for @reader do |form|%>
-    <%= render 'form', f: form %>
-    <%= link_to "Вернуться к списку", request.referrer %>
-    <%= button_to "Добавить запись", @reader %>
-  <% end %>
+<div class="container">
+  <div id="form">
+    <%= form_for @reader do |form|%>
+      <%= render 'form', f: form %>
+      <div class="form-button">
+        <%= link_to "Вернуться к списку", request.referrer %>
+        <%= button_to "Добавить запись", @reader %>
+      </div>
+    <% end %>
+  </div>
 </div>

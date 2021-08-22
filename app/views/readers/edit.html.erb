@@ -17,7 +17,7 @@
         <%= link_to_add_association 'Добавить книгу', form, :reader_books %>
       </div>
     </div>
-    <p><%= link_to "Вернуться к списку", readers_path %></p>
-    <p><%= form.submit "Изменить" %></p>
+    <%= link_to "Вернуться к списку", readers_path %>
+    <%= form.submit "Изменить" %>
   <% end %>
 </div>

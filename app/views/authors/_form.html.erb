@@ -1,11 +1,11 @@
-<div class="form-authors">
-  <%= f.label :first_name, "Имя:" %><br>
-  <%= f.text_field :first_name %><br>
-  <%= f.label :last_name, "Фамилия:" %><br>
-  <%= f.text_field :last_name %><br>
+<div class="authors">
+  <%= f.label :first_name, "Имя:" %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name, "Фамилия:" %>
+  <%= f.text_field :last_name %>
   <div class="gender-block">
-    <%= f.label :gender, "Пол:"%><br>
-    <div style="margin-top: 10px;">
+    <%= f.label :gender, "Пол:"%>
+    <div class="form_gender">
       <p class="gender-radio_button"><%= f.radio_button :gender, "female" %><%= t("enum.gender.female") %></p>
       <p class="gender-radio_button"><%= f.radio_button :gender, "male" %><%= t("enum.gender.male") %></p>
 
@@ -13,8 +13,8 @@
       <p class="gender-radio_button"><%= f.radio_button :gender, "1" %><%= t("enum.gender.male") %></p>-->
     </div>
   </div>
-  <%= f.label :active, "Статус:" %><br>
-  <%= f.check_box :active %>активен на сегоднешний день<br><br>
-  <%= f.label :description, "Информация:" %><br>
-  <%= f.text_area :description %><br>
+  <%= f.label :active, "Статус:" %>
+  <div class="checkbox"><%= f.check_box :active %>активен на сегоднешний день</div>
+  <%= f.label :description, "Информация:" %>
+  <%= f.text_area :description %>
 </div>

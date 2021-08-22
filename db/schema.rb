@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_163622) do
+ActiveRecord::Schema.define(version: 2021_08_19_125312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 2021_08_05_163622) do
     t.string "title"
     t.integer "year_published"
     t.text "annotation"
-    t.integer "pages"
+    t.integer "page"
     t.text "content"
+    t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "author_id"
@@ -38,10 +39,8 @@ ActiveRecord::Schema.define(version: 2021_08_05_163622) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string "name", default: "Новая карточка"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "active", default: true
     t.bigint "reader_id", null: false
     t.bigint "library_id", null: false
     t.index ["library_id"], name: "index_cards_on_library_id"
@@ -65,12 +64,12 @@ ActiveRecord::Schema.define(version: 2021_08_05_163622) do
   end
 
   create_table "reader_books", force: :cascade do |t|
+    t.bigint "reader_id"
     t.bigint "book_id"
     t.datetime "planning_return_time", null: false
     t.datetime "returned_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "reader_id"
     t.index ["book_id"], name: "index_reader_books_on_book_id"
     t.index ["reader_id"], name: "index_reader_books_on_reader_id"
   end
