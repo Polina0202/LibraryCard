@@ -1,22 +1,119 @@
+:root
+{
+  --main-submit-color: #fcacd1;
+  --main-add-button-color: #8dd9bf;
+  --minor-add-button-color: #44cf96;
+  --table-reader-color: #d7e7f7;
+}
+
 #edit-reader {
   padding: 10px 15px;
-  background: #bdbdf2;
+  background: var(--table-reader-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   table {
+    background: var(--table-reader-color);
     width: 100%;
     border-radius: 10px;
-    background: white;
-    /*border-collapse: collapse;*/
-    border: 2px solid red;
+    table-layout:fixed;
+    //border-collapse: collapse;
+    border: 2px solid var(--table-reader-color);
     th {
-      border: 2px solid red;
+      border: 2px solid var(--table-reader-color);
+      border-radius: 10px;
       padding: 10px 15px;
+      background: white;
+    }
 
+    td{
+      background: white;
+      border: 2px solid var(--table-reader-color);
+      border-radius: 10px;
+      padding: 10px 15px;
     }
   }
   p {
     //padding-left: 15px;
   }
 }
+
+#edit-reader .model-table{
+  margin-bottom: 10px;
+}
+
+#edit-reader h2{
+  text-align: center;
+  font-family: sans-serif;
+  background: white;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+#edit-reader select {
+margin: 10px 0;
+width: 100%;
+padding: 0 5px;
+height: 2.5em;
+font-size: 16px;
+}
+
+#edit-reader .delete_button{
+  color: white;
+  display: inline-block;
+}
+#edit-reader .links{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 5px 5px 0px;
+}
+
+#edit-reader .button_back{
+  margin: 5px 10px 5px 0px;
+}
+
+#edit-reader input[type="submit"]{
+  color: white;
+  border-radius: 5px;
+  border: 2px solid var(--main-submit-color);
+  background: var(--main-submit-color);
+  margin: 5px 5px 5px 0px;
+  padding: 7px;
+  font-size: 19px;
+  font-family: sans-serif;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+#edit-reader input[type="submit"]:hover{
+  background: var(--main-delete-button-color);
+  border-color: var(--main-delete-button-color);
+
+}
+
+#edit-reader .add_button{
+  color: gray;
+  border-radius: 5px;
+  background: yellow;
+  padding: 9px;
+  font-size: 19px;
+  font-family: sans-serif;
+  text-decoration: none;
+  background: var(--main-add-button-color);
+  transition: all 0.3s ease-in;
+}
+
+#edit-reader .add_button:hover{
+  background: var(--minor-add-button-color);
+  color: white;
+}
+
+#edit-reader .revers_button:hover{
+  background: blue;
+}
+// @media screen and (max-width: 400px){
+//   #edit-reader input[type="submit"]{
+//     margin: 5px;
+//     margin-left: 0px;
+//   }
+// }

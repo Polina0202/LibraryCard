@@ -3,6 +3,6 @@
     <%= f.collection_select :book_id, Book.order(:title), :id, :title %>
   </td>
   <td>
-    <%= link_to_remove_association "Удалить книгу", f %>
+    <%= link_to_remove_association "Удалить книгу", f, class: "delete_button" %>
   </td>
 </tr>

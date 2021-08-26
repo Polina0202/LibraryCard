@@ -20,6 +20,7 @@ class ReadersController < ApplicationController
   end
 
   def edit
+    @book = Book.all
     @reader = Reader.find(params[:id])
   end
 

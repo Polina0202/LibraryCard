@@ -2,22 +2,34 @@
   <%= form_for @reader, as: :reader, url: reader_path(@reader), method: :patch do |form|%>
     <h2><%= @reader.full_name %></h2>
     <div class="nested-fields">
-      <table>
+      <table class="model-table">
         <thead>
           <th>Название книги</th>
           <th>Действия</th>
         </thead>
         <tbody>
+          <!-- <tr>
+            <td>
+              <%= form_for @book, as: :book, url: book_path(@book), method: :patch do |f|%>
+                <%= f.collection_select :ids, Book.order(:title), :id, :full_title%>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to "Удалить книгу", readers_path, class: "delete_button" %>
+            </td>
+          </tr> -->
           <%= form.fields_for :reader_books do |f| %>
             <%= render 'reader_book_fields', f: f %>
           <% end %>
         </tbody>
       </table>
       <div class="links">
-        <%= link_to_add_association 'Добавить книгу', form, :reader_books %>
+        <%= link_to_add_association 'Добавить книгу', form, :reader_books, class: "add_button" %>
       </div>
     </div>
-    <%= link_to "Вернуться к списку", readers_path %>
+    <div class="links">
+    <%= link_to "Вернуться к списку", readers_path, class: "button_back" %>
     <%= form.submit "Изменить" %>
+    </div>
   <% end %>
 </div>
