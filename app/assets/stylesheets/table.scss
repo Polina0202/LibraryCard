@@ -1,7 +1,15 @@
 .page
 {
   display: flex;
+  //min-width: min-content;
+  //flex-basis: fill;
   flex-direction: column;
+
+  @media screen and (max-width: 1200px){
+table {
+font-size: 0.7em;
+}
+}
 }
 
 .button-right {
